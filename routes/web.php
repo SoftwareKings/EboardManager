@@ -22,3 +22,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Dashboard
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth')->name('dashboard');
+
