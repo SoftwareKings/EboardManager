@@ -25,3 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Dashboard
 Route::get('/dashboard', 'DashboardController@index')->middleware('auth')->name('dashboard');
 
+Route::middleware(['auth', 'admin'])->group(function() {
+    Route::get('/admin/users', 'Admin\UserController@index')->name('admin.users.index');
+});
