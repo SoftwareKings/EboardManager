@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('dashboard')
+@section('mainboard')
 
 <!-- <div>
     This is Dashboard

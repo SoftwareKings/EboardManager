@@ -73,7 +73,7 @@
                         </ul>
                     </nav>
                 </aside>
-                @yield('dashboard')
+                @yield('mainboard')
             </div>
         @endauth
     </div>
