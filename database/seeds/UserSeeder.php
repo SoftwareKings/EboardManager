@@ -17,12 +17,14 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'William Martin',
             'email' => 'supervenus0204@gmail.com',
+            'role_id' => 1,
             'password' => Hash::make($this->default_password) // Make sure to hash the password
         ]);
 
         User::create([
             'name' => 'Jane Doe',
             'email' => 'janedoe@example.com',
+            'role_id' => 3,
             'password' => Hash::make($this->default_password) // Another user with hashed password
         ]);
     }
