@@ -17,7 +17,7 @@
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
     <div id="app">
-        <nav class="bg-blue-900 shadow mb-8 py-6">
+        <nav class="bg-blue-900 shadow @guest mb-8 @endguest py-6">
             <div class="container mx-auto px-6 md:px-0">
                 <div class="flex items-center justify-center">
                     <div class="mr-6">
@@ -46,8 +46,37 @@
                 </div>
             </div>
         </nav>
-
-        @yield('content')
+        @auth
+            <div class="flex h-screen">
+                <!-- Sidebar -->
+                <aside class="w-64 bg-gray-800 text-gray-200">
+                    <!-- <div class="flex justify-center py-4">
+                        <h1 class="text-2xl font-semibold text-white">Manage Projects</h1>
+                    </div> -->
+                    <nav class="mt-6">
+                        <ul>
+                            <li>
+                                <a href="#" class="block py-3 px-6 hover:bg-gray-700">User Management</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-3 px-6 hover:bg-gray-700">Project Management</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-3 px-6 hover:bg-gray-700">Flow Diagram Management</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-3 px-6 hover:bg-gray-700">Approval Management</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-3 px-6 hover:bg-gray-700">System Configuration and Maintenance</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                @yield('dashboard')
+            </div>
+        @endauth
     </div>
+    @yield('content')
 </body>
 </html>
