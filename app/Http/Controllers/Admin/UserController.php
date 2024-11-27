@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index() {
         $users = User::all();
-        return view('admin.users.index', compact('users'));
+        return view('admin.users', compact('users'));
     }
 
     public function store(Request $request) {
@@ -20,7 +20,6 @@ class UserController extends Controller
             'password' => 'required|string|min:8|confirmed',
             'role_id' => 'required|exists:roles,id',
         ]);
-        dump($request);
 
         User::create([
             'name' => $request->name,
