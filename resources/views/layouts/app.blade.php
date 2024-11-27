@@ -73,10 +73,12 @@
                         </ul>
                     </nav>
                 </aside>
-                @yield('mainboard')
+                @yield('content')
             </div>
         @endauth
     </div>
-    @yield('content')
+    @guest
+        @yield('content')
+    @endguest
 </body>
 </html>

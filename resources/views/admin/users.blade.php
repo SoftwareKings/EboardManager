@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 
-@section('mainboard')
+@section('content')
 <div class="flex-1 p-6">
     <h1 class="text-3xl font-semibold text-gray-700 dark:text-gray-200 mb-6">User Management</h1>
 
