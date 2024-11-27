@@ -29,5 +29,6 @@ Route::middleware([])->group(function() {
     Route::get('/admin/users', 'Admin\UserController@index')->name('admin.users.index');
     Route::post('/admin/users', 'Admin\UserController@store')->name('admin.users.store');
     Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard.index');
-    // Route::get('/admin/projects', 'Admin\UserController')
+    Route::get('/admin/approvals', 'Admin\ApprovalController@index')->name('admin.approval.index');
+    Route::get('/admin/projects', 'Admin\ProjectController@index')->name('admin.project.index');
 });
