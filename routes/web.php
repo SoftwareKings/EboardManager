@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    error_log('Some message here.');
     return view('welcome');
 });
 
@@ -24,3 +25,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Dashboard
 Route::get('/dashboard', 'DashboardController@index')->middleware('auth')->name('dashboard');
 
+Route::middleware([])->group(function() {
+    Route::get('/admin/users', 'Admin\UserController@index')->name('admin.users.index');
+    Route::post('/admin/users', 'Admin\UserController@store')->name('admin.users.store');
+    Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard.index');
+    Route::get('/admin/approvals', 'Admin\ApprovalController@index')->name('admin.approval.index');
+    Route::get('/admin/projects', 'Admin\ProjectController@index')->name('admin.project.index');
+});
